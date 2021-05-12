@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.6.2'
+ruby '2.6.1'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -11,6 +11,8 @@ gem 'actionview'
 gem 'sprockets', '~>3.0'
 
 gem "websocket-extensions", ">= 0.1.5"
+gem 'rack-cors'
+
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder'

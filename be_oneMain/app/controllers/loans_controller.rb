@@ -5,6 +5,7 @@ class LoansController < ActionController::API
   end
 
   def index
+    # byebug
     render json: Loan.all
   end
 
