@@ -10,6 +10,32 @@ class LoansController < ActionController::API
   end
 
   def show
-    render json: Loan.find(params[:id])
+    # byebug
+    loan = Loan.find(params[:id])
+    render json: {loan: LoansSerializer.new(loan)}
   end
+
+  def update
+    loan = Loan.find(params[:id])
+    loanAmount = loan.funded_amount.to_i
+    amount = params[:amount].to_i
+  
+    if amount <= loanAmount && amount > 0
+
+    newAmount = loanAmount - amount
+    payment = Payment.create(loan:loan,payment_amount: params[:amount].to_i, payment_date: Date.today)
+
+    loan.update(funded_amount: newAmount)
+    render json: {
+      message: 'success',
+      status: :created
+    }
+
+  else 
+    
+    render json: {
+      message: 'invalid'
+    }
+  end
+end
 end
