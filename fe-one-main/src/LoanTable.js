@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 
 function LoanTable(props) {
   const [amount, setAmount] = useState("");
-  const [edit, setEdit] = useState("false");
 
   useEffect(() => {}, []);
   const makePayment = loan => {
@@ -20,7 +19,7 @@ function LoanTable(props) {
           alert("Invalid Amount, can't make payment");
         } else {
           console.log(data.message);
-          setEdit("true");
+          window.location.reload();
         }
       });
   };
