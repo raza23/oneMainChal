@@ -1,0 +1,13 @@
+navigate to be_oneMain and run
+
+1) rails db:migrate
+2) rails db:seed
+3) rails seed
+
+
+AND 
+
+navigate to fe-one-main and run 
+
+1) npm install
+2) npm start
